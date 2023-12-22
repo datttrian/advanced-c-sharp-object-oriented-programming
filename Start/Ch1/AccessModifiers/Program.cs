@@ -8,6 +8,7 @@ DerivedClass class2 = new DerivedClass();
 // Access the methods
 Console.WriteLine($"Class1 Data value is {class1.Data}");
 class1.Func1();
+// class1.Func2();
 class1.Func1();
 Console.WriteLine($"Class1 Data value is {class1.Data}");
 
