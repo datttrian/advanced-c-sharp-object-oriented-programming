@@ -2,41 +2,52 @@
 // Sealed classes and members
 
 // Example 1: Sealing a class
-public class A {
-    public A() {
+// public sealed class A
+public class A
+{
+    public A()
+    {
         Console.WriteLine("A");
     }
 
-    public virtual void Func1() {
+    public virtual void Func1()
+    {
         Console.WriteLine($"Func1 in class A");
     }
 }
 
-public class B : A {
-    public B() {
+public class B : A
+{
+    public B()
+    {
         Console.WriteLine("B");
     }
 
-    public override void Func1() {
+    public override void Func1()
+    {
         Console.WriteLine("Func1 in class B");
     }
 }
 
 // Example 2: Sealing an individual member
-public class C {
-    public C() {}
+public class C
+{
+    public C() { }
 
-    public virtual void Func2() {}
+    public virtual void Func2() { }
 }
 
-public class D : C {
-    public D() {}
+public class D : C
+{
+    public D() { }
 
-    public override void Func2() {}
+    // public sealed override void Func2() { }
+    public override void Func2() { }
 }
 
-public class E : D {
-    public E() {}
+public class E : D
+{
+    public E() { }
 
-    public override void Func2() {}
+    public override void Func2() { }
 }
