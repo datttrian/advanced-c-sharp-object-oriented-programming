@@ -3,27 +3,33 @@
 // Declare an abstract base class to prevent direct instantiation
 public abstract class Vehicle
 {
-    public Vehicle() {
+    public Vehicle()
+    {
     }
 
-    public required string Model {
+    public required string Model
+    {
         get;
         init;
     }
 
-    public required string Make {
+    public required string Make
+    {
         get;
         init;
     }
 
     // By declaring a member to be abstract, we can require subclasses to implement it
-    public virtual void SoundHorn() {
-        Console.WriteLine("Add horn sound here");
-    }
+    // public abstract void SoundHorn() {
+    //     Console.WriteLine("Add horn sound here");
+    // }
+
+    public abstract void SoundHorn();
 
     public virtual int WheelCount { get; }
 
-    public override string ToString() {
+    public override string ToString()
+    {
         return $"{GetType()}: {Make} {Model}, Wheels: {WheelCount}";
     }
 }
@@ -31,10 +37,22 @@ public abstract class Vehicle
 // Declare sublasses that inherit from the abstract class
 public class Car : Vehicle
 {
-    public Car() {}
+    public Car() { }
+
+    public override int WheelCount => 4;
+    public override void SoundHorn()
+    {
+        Console.WriteLine("Beep Beep");
+    }
 }
 
 public class Motorcycle : Vehicle
 {
-    public Motorcycle() {}
+    public Motorcycle() { }
+
+    public override int WheelCount => 2;
+    public override void SoundHorn()
+    {
+        Console.WriteLine("Honk Honk");
+    }
 }
